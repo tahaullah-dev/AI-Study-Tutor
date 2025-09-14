@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #e0e0e0;
+  --text: #333;
+  --card-bg: #f9f9f9;
+  --card-shadow: 7px 7px 15px #bebebe, -7px -7px 15px #ffffff;
+}
+body.dark {
+  --bg: #181a1b;
+  --text: #f1f1f1;
+  --card-bg: #23272f;
+  --card-shadow: 7px 7px 15px #111217, -7px -7px 15px #23272f;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.neumorphic-card {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s;
+}
+textarea {
+  width: 100%;
+  min-height: 150px;
+  border-radius: 15px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  box-shadow: inset 6px 6px 8px #bebebe, inset -6px -6px 8px #ffffff;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Updated controls section to fix button spacing */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+/* Button container for better spacing */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+select {
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 6px 6px 8px #bebebe, -6px -6px 8px #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+button {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  flex: 1;
+  min-height: 48px; /* Ensure minimum touch target */
+}
+button:hover:enabled {
+  box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+body.dark button {
+  background: #fcfcfc;
+  color: #111111;
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 0px #0eb5a8,
+    0 0 10px 2px #0eb5a888,
+    0 0 20px 6px #0eb5a822;
+  transition: box-shadow 0.3s, background 0.3s, color 0.3s;
+  position: relative;
+  z-index: 1;
+}
+body.dark button:hover:enabled {
+  background: #0eb5a8;
+  color: #000000;
+  box-shadow:
+    0 0 0 2px #1de9b6,
+    0 0 15px 4px #0eb5a8cc,
+    0 0 30px 12px #0eb5a899;
+}
+body.dark button:disabled {
+  opacity: 0.5;
+  box-shadow: 0 0 2px 1px #8882;
+}
+
+/* Mobile-specific adjustments - FIXED VERSION */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem; /* Reduce overall padding on mobile */
+  }
+  
+  .neumorphic-card {
+    padding: 1.25rem; /* Slightly less padding in cards */
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .controls label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .controls select {
+    width: 100%;
+    min-height: 44px; /* Better touch target */
+  }
+  
+  /* Fix for button container spacing */
+  .button-container {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+    min-width: 0;
+    padding: 1rem 1.5rem;
+    min-height: 50px; /* Larger touch target for mobile */
+    font-size: 1rem;
+    margin: 0; /* Remove any margin that might cause overlap */
+  }
+  
+  /* Ensure no margin on button elements in mobile */
+  button + button {
+    margin-left: 0 !important;
+  }
+}
+
+pre, p {
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Study Tutor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>AI Study Tutor</h1>
+  <button id="toggleModeBtn">🌙 Dark Mode</button>
+
+  <div class="neumorphic-card">
+    <h2>Enter Content</h2>
+    <textarea id="contentInput" placeholder="Paste your study content here..."></textarea>
+    <div class="controls">
+      <label>
+        Summary Length:
+        <select id="summaryLengthSelect">
+          <option value="short">Short</option>
+          <option value="medium" selected>Medium</option>
+          <option value="long">Long</option>
+        </select>
+      </label>
+      <label>
+        Quiz Difficulty:
+        <select id="quizDifficultySelect">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+    </div>
+    <!-- FIXED: Wrapped buttons in a container with proper spacing -->
+    <div class="button-container">
+      <button id="summarizeBtn">Summarize</button>
+      <button id="generateQuizBtn">Generate Quiz</button>
+    </div>
+  </div>
+
+  <div class="neumorphic-card" id="summaryCard" style="display:none;">
+    <h2>Summary</h2>
+    <p id="summaryText"></p>
+  </div>
+
+  <div class="neumorphic-card" id="quizCard" style="display:none;">
+    <h2>Quiz</h2>
+    <div id="quizText"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

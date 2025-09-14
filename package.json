@@ -1,0 +1,17 @@
+{
+  "name": "ai-study-tutor-backend",
+  "version": "1.0.0",
+  "description": "Backend for AI Study Tutor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^4.18.2"
+  }
+}
